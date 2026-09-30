@@ -1,14 +1,21 @@
 {
-  "name": "JobTracker",
+  "name": "job-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Job Tracker v1",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "backend": "npm --prefix backend run start:dev",
+    "frontend": "npm --prefix frontend run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "build": "npm --prefix frontend run build && npm --prefix backend run build",
+    "start": "npm --prefix backend run start"
   },
-  "dependencies": {},
   "devDependencies": {
-    "typescript": "^5.5.3"
+    "concurrently": "^10.0.5"
   },
-  "private": true
+  "private": true,
+  "keywords": [],
+  "author": "Mehdi Bouaziz",
+  "license": "UNLICENSED",
+  "type": "commonjs"
 }

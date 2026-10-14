@@ -9,6 +9,13 @@
 
 [//]: # (You can check the figma designs [here]&#40;https://portfolio-mehdibouaziz.vercel.app/figma&#41;.)
 
+## 🚧 To-Do's
+
+- BE: Jobs CRUD
+- BE: Auth
+- FE: Main dashboard
+- 
+
 ## ⚙️ How to run
 
 ### Backend

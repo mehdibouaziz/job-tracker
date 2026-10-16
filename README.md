@@ -14,11 +14,12 @@
 - BE: Jobs CRUD
 - BE: Auth
 - FE: Main dashboard
-- 
+- FE: React/Tanstack Router
+- FE: React/Tanstack Query
 
 ## ⚙️ How to run
 
-### Backend
+### Backend:
 
 ### Frontend:
 

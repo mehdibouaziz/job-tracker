@@ -11,11 +11,14 @@
 
 ## 🚧 To-Do's
 
-- BE: Jobs CRUD
-- BE: Auth
-- FE: Main dashboard
-- FE: React/Tanstack Router
-- FE: React/Tanstack Query
+-[x] FE: Tanstack/React Router
+-[ ] FE: Tanstack/React Query
+-[ ] BE: Jobs CRUD
+-[ ] FE: Main dashboard
+-[ ] BE: Auth
+-[ ] FE: Auth
+-[ ] FE/BE: Kanban
+-[ ] FE/BE: Stats
 
 ## ⚙️ How to run
 

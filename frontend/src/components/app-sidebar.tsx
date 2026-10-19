@@ -14,7 +14,10 @@ import {
     Lighthouse,
     NotebookTabs,
     SquareChartGantt,
+    Plus,
 } from "lucide-react";
+import {Button} from "@/components/ui/button.tsx";
+import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip.tsx";
 
 
 export function AppSidebar() {
@@ -44,16 +47,33 @@ export function AppSidebar() {
                     <SidebarGroupLabel>Applications</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            <SidebarMenuItem>
-                                <Link to={'/'}>
+                            <SidebarMenuItem className="flex items-center justify-between gap-2">
+                                <Link to={'/'} className="grow">
                                     <SidebarMenuButton tooltip={"All Jobs"}>
-                                        <SquareChartGantt />
+                                        <SquareChartGantt/>
                                         <span>All Jobs</span>
                                     </SidebarMenuButton>
                                 </Link>
+                                <Tooltip>
+                                    <TooltipTrigger>
+                                        <Button
+                                            size="icon"
+                                            className="size-6 group-data-[collapsible=icon]:opacity-0"
+                                            variant="outline"
+                                        >
+                                            <Plus/>
+                                            <span className="sr-only">Inbox</span>
+                                        </Button>
+                                    </TooltipTrigger>
+                                    <TooltipContent side={"right"}>
+                                        <p>Add job listing</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
                                 <Link to={'/'}>
                                     <SidebarMenuButton>
-                                        <LayoutDashboard />
+                                        <LayoutDashboard/>
                                         <span>Kanban</span>
                                     </SidebarMenuButton>
                                 </Link>
@@ -87,15 +107,17 @@ export function AppSidebar() {
             </SidebarContent>
 
             <SidebarFooter>
-                <Link to={'/about'}>
-                    <SidebarMenuButton>
-
-                        <Info/>
-                        <span>About</span>
-
-                    </SidebarMenuButton>
-                </Link>
-                <ModeToggle/>
+                <SidebarMenu>
+                    <SidebarMenuItem className="flex items-center justify-between gap-2">
+                        <Link to={'/about'} className="grow">
+                            <SidebarMenuButton>
+                                <Info/>
+                                <span>About</span>
+                            </SidebarMenuButton>
+                        </Link>
+                        <ModeToggle/>
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </SidebarFooter>
         </Sidebar>
     )

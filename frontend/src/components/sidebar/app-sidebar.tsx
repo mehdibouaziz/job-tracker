@@ -4,7 +4,7 @@ import {
     SidebarFooter,
     SidebarGroup, SidebarGroupContent, SidebarGroupLabel,
     SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar.tsx"
 import {ModeToggle} from "@/components/theme-provider/mode-toggle.tsx";
 import {Link} from "@tanstack/react-router";
 import {
@@ -44,7 +44,7 @@ export function AppSidebar() {
             <SidebarContent>
 
                 <SidebarGroup>
-                    <SidebarGroupLabel>Applications</SidebarGroupLabel>
+                    <SidebarGroupLabel className="group-data-[collapsible=icon]:hidden">Applications</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             <SidebarMenuItem className="flex items-center justify-between gap-2">
@@ -62,7 +62,6 @@ export function AppSidebar() {
                                             variant="outline"
                                         >
                                             <Plus/>
-                                            <span className="sr-only">Inbox</span>
                                         </Button>
                                     </TooltipTrigger>
                                     <TooltipContent side={"right"}>
@@ -70,8 +69,9 @@ export function AppSidebar() {
                                     </TooltipContent>
                                 </Tooltip>
                             </SidebarMenuItem>
+
                             <SidebarMenuItem>
-                                <Link to={'/'}>
+                                <Link to={'/kanban'}>
                                     <SidebarMenuButton>
                                         <LayoutDashboard/>
                                         <span>Kanban</span>
@@ -83,16 +83,18 @@ export function AppSidebar() {
                 </SidebarGroup>
 
                 <SidebarGroup>
-                    <SidebarGroupLabel>Resources</SidebarGroupLabel>
+                    <SidebarGroupLabel className="group-data-[collapsible=icon]:hidden">Resources</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             <SidebarMenuItem>
-                                <Link to={'/'}>
+                                <Link to={'/boards'}>
                                     <SidebarMenuButton>
                                         <NotebookTabs/>
                                         <span>Job Boards</span>
                                     </SidebarMenuButton>
                                 </Link>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
                                 <Link to={'/stats'}>
                                     <SidebarMenuButton>
                                         <ChartNoAxesCombined/>

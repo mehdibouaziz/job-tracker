@@ -25,4 +25,8 @@ export class JobsService {
     async update(id: string, updateJobDto: UpdateJobDto): Promise<Job|null> {
         return this.jobModel.findByIdAndUpdate(id, updateJobDto);
     }
+
+    async delete(id: string): Promise<null> {
+        return this.jobModel.findByIdAndDelete(id);
+    }
 }

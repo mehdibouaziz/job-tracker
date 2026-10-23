@@ -10,6 +10,7 @@ export class CreateJobDto {
     @IsString()
     company: string;
 
+    @Type(() => Date)
     @IsDate()
     dateAdded: Date;
 

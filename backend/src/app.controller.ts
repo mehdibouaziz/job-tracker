@@ -1,11 +1,13 @@
-import { Controller, Get, Res } from '@nestjs/common';
-import { type Response } from 'express';
-import {join} from "path";
+import { Controller, Get } from '@nestjs/common';
+import {AppService} from "./app.service.js";
 
 @Controller()
 export class AppController {
-  @Get('{*path}')
-  serveApp(@Res() res: Response) {
-    res.sendFile(join(import.meta.dirname, '..', 'client', 'index.html'));
-  }
+  constructor(private readonly appService: AppService) {}
+
+@Get()
+  hello() {
+    return this.appService.getHello();
+}
+
 }
